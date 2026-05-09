@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Right Man Selection Guide | Global Editions</title>
+  <meta name="description" content="A multilingual landing page for The Right Man Selection Guide, with paid book links and free checklist downloads in English, Persian, Arabic, Turkish, Spanish, Japanese, Russian, Chinese, and more." />
+  <style>
+    :root {
+      --ink: #241d2c;
+      --muted: #6f6478;
+      --rose: #ff7ca8;
+      --rose-soft: #ffe8f0;
+      --lavender: #8e6ee8;
+      --cream: #fff8ef;
+      --peach: #ffd3bd;
+      --mint: #dff7ee;
+      --gold: #d6a85f;
+      --card: rgba(255,255,255,0.82);
+      --shadow: 0 24px 70px rgba(60, 32, 78, 0.14);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,124,168,.24), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(142,110,232,.22), transparent 28%),
+        linear-gradient(135deg, #fff9f3 0%, #fff0f6 45%, #f5efff 100%);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 248, 250, .72);
+      border-bottom: 1px solid rgba(255,255,255,.8);
+    }
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 850;
+      letter-spacing: -0.03em;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--rose), var(--lavender));
+      box-shadow: 0 12px 28px rgba(255, 124, 168, .3);
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 14px;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .pill-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: white;
+      font-weight: 750;
+      box-shadow: 0 16px 34px rgba(36,29,44,.18);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .pill-button:hover { transform: translateY(-2px); box-shadow: 0 22px 45px rgba(36,29,44,.23); }
+    .pill-button.light { background: white; color: var(--ink); border: 1px solid rgba(36,29,44,.08); }
+
+    .hero {
+      position: relative;
+      padding: 84px 0 58px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(255,255,255,.8);
+      color: #8d4a70;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 10px 28px rgba(60,32,78,.08);
+    }
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: .95;
+      letter-spacing: -0.075em;
+      margin: 20px 0 22px;
+    }
+    .hero h1 span {
+      display: block;
+      background: linear-gradient(135deg, #241d2c, #9c4e79 52%, #7b5bd6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero p {
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 0 28px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .trust-chip {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.68);
+      color: #6b536f;
+      font-size: 13px;
+      font-weight: 750;
+      border: 1px solid rgba(255,255,255,.9);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 540px;
+    }
+    .book-stack {
+      position: absolute;
+      inset: 16px 0 auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      transform: rotate(-2deg);
+    }
+    .book-card {
+      min-height: 235px;
+      border-radius: 30px;
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.9);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .book-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: rgba(255, 124, 168, .18);
+      right: -60px;
+      top: -60px;
+    }
+    .book-card.alt::after { background: rgba(142,110,232,.17); }
+    .book-card.mint::after { background: rgba(93, 194, 160, .20); }
+    .book-lang { font-size: 13px; color: var(--muted); font-weight: 850; text-transform: uppercase; letter-spacing: .08em; }
+    .book-title { font-size: 28px; line-height: 1.05; letter-spacing: -0.04em; font-weight: 900; margin: 12px 0; position: relative; z-index: 1; }
+    .book-footer { display: flex; justify-content: space-between; align-items: end; color: #8d4a70; font-weight: 800; position: relative; z-index: 1; }
+    .mini-cover {
+      width: 64px; height: 84px; border-radius: 13px;
+      background: linear-gradient(155deg, #2a2035, #ff9bbb 72%, #fff0f6);
+      box-shadow: 0 12px 24px rgba(36,29,44,.18);
+    }
+    .floating-note {
+      position: absolute;
+      right: 12px;
+      bottom: 20px;
+      width: min(360px, 82%);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: #241d2c;
+      color: white;
+      box-shadow: 0 28px 70px rgba(36,29,44,.3);
+      transform: rotate(3deg);
+    }
+    .floating-note strong { color: #ffd5e3; }
+    .floating-note p { color: rgba(255,255,255,.76); font-size: 15px; margin: 8px 0 0; line-height: 1.6; }
+
+    section { padding: 70px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+    .section-head p { margin: 0; color: var(--muted); line-height: 1.6; max-width: 500px; }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .language-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      padding: 24px;
+      min-height: 330px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.92);
+      box-shadow: 0 18px 48px rgba(60,32,78,.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .language-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,124,168,.14), transparent 42%, rgba(142,110,232,.12));
+      pointer-events: none;
+    }
+    .language-card .top, .language-card .bottom { position: relative; z-index: 1; }
+    .flag {
+      width: 48px; height: 48px; border-radius: 18px;
+      display: grid; place-items: center;
+      background: #fff2f7;
+      font-size: 24px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.8);
+    }
+    .language-card h3 { margin: 16px 0 8px; font-size: 25px; letter-spacing: -0.04em; }
+    .native { color: var(--muted); font-weight: 800; margin-bottom: 12px; }
+    .desc { color: #675b70; line-height: 1.55; font-size: 15px; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .small-btn {
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-weight: 850;
+      font-size: 13px;
+      background: var(--ink);
+      color: white;
+    }
+    .small-btn.secondary { background: white; color: var(--ink); border: 1px solid rgba(36,29,44,.10); }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .poster {
+      min-height: 420px;
+      border-radius: 36px;
+      padding: 30px;
+      background:
+        linear-gradient(145deg, rgba(36,29,44,.88), rgba(117,78,142,.72)),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.45), transparent 22%);
+      color: white;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .poster.light {
+      background: linear-gradient(145deg, #fff, #ffeaf2 52%, #eee8ff);
+      color: var(--ink);
+    }
+    .poster h3 { font-size: clamp(30px, 4vw, 48px); line-height: .98; letter-spacing: -0.06em; margin: 0; }
+    .poster p { max-width: 420px; color: inherit; opacity: .78; line-height: 1.7; }
+    .poster .script { font-family: Georgia, serif; font-style: italic; color: #ffd4e3; }
+    .poster.light .script { color: #9a4c76; }
+
+    .download-panel {
+      border-radius: 40px;
+      padding: 34px;
+      background: rgba(36,29,44,.92);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center;
+      box-shadow: 0 30px 80px rgba(36,29,44,.25);
+    }
+    .download-panel h2 { margin: 0 0 12px; font-size: clamp(32px, 5vw, 58px); line-height: 1; letter-spacing: -0.065em; }
+    .download-panel p { color: rgba(255,255,255,.72); line-height: 1.75; margin: 0; }
+    .download-list { display: grid; gap: 12px; }
+    .download-row {
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .download-row span { color: rgba(255,255,255,.76); font-size: 13px; }
+    .download-row a { font-weight: 850; color: #ffd4e3; }
+
+    .setup {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 14px;
+    }
+    .step {
+      border-radius: 26px;
+      background: rgba(255,255,255,.72);
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.86);
+      box-shadow: 0 14px 40px rgba(60,32,78,.08);
+    }
+    .step-number { color: var(--rose); font-weight: 950; font-size: 14px; }
+    .step h3 { margin: 10px 0 8px; letter-spacing: -0.04em; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
+
+    .footer { padding: 42px 0 60px; color: var(--muted); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; border-top: 1px solid rgba(36,29,44,.10); padding-top: 28px; }
+
+    @media (max-width: 930px) {
+      .hero-grid, .showcase, .download-panel { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 720px; }
+      .language-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .setup { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, 1180px); }
+      .hero { padding-top: 50px; }
+      .book-stack { grid-template-columns: 1fr; transform: none; }
+      .hero-visual { min-height: 1030px; }
+      .language-grid, .setup { grid-template-columns: 1fr; }
+      .footer-inner { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="The Right Man Selection Guide home">
+        <span class="brand-mark">✦</span>
+        <span>Right Man Guide</span>
+      </a>
+      <div class="nav-links">
+        <a href="#editions">Editions</a>
+        <a href="#free-checklists">Free Checklists</a>
+        <a href="#visuals">Visual Gallery</a>
+        <a href="#setup">GitHub Setup</a>
+      </div>
+      <a class="pill-button" href="#editions">Explore Languages</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">🌍 Global multilingual library · Based on the English edition</div>
+          <h1><span>The Right Man</span><span>Selection Guide</span></h1>
+          <p>A modern global page introducing every language edition of the book, with separate purchase links and free downloadable checklist workbooks for women who want to choose intimacy with clarity, dignity, and emotional safety.</p>
+          <div class="hero-actions">
+            <a class="pill-button" href="#free-checklists">Download Free Checklists</a>
+            <a class="pill-button light" href="#editions">Buy the Book</a>
+          </div>
+          <div class="trust-row" aria-label="Core themes">
+            <span class="trust-chip">Emotional maturity</span>
+            <span class="trust-chip">Boundaries</span>
+            <span class="trust-chip">Red flags</span>
+            <span class="trust-chip">Shared future</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Multilingual book cards">
+          <div class="book-stack">
+            <article class="book-card">
+              <div>
+                <div class="book-lang">English Base Edition</div>
+                <div class="book-title">The Right Man Selection Guide</div>
+              </div>
+              <div class="book-footer"><span>100 key tips</span><span class="mini-cover"></span></div>
+            </article>
+            <article class="book-card alt" dir="rtl" lang="fa">
+              <div>
+                <div class="book-lang">Persian Edition</div>
+                <div class="book-title">راهنمای انتخاب مرد مناسب</div>
+              </div>
+              <div class="book-footer"><span>نسخه فارسی</span><span class="mini-cover"></span></div>
+            </article>
+            <article class="book-card mint" dir="rtl" lang="ar">
+              <div>
+                <div class="book-lang">Arabic Edition</div>
+                <div class="book-title">دليل اختيار الرجل المناسب</div>
+              </div>
+              <div class="book-footer"><span>النسخة العربية</span><span class="mini-cover"></span></div>
+            </article>
+            <article class="book-card">
+              <div>
+                <div class="book-lang">Spanish Edition</div>
+                <div class="book-title">Guía para Elegir al Hombre Correcto</div>
+              </div>
+              <div class="book-footer"><span>Edición español</span><span class="mini-cover"></span></div>
+            </article>
+          </div>
+          <aside class="floating-note">
+            <strong>Page promise:</strong>
+            <p>Each language has its own book purchase link and its own free checklist PDF. Replace the placeholder URLs with your Google Books or Gumroad links.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="editions">
+      <div class="container">
+        <div class="section-head">
+          <h2>Global editions</h2>
+          <p>Use one card per language. Each card includes a purchase link and a free checklist download link. Keep English as the master/base edition.</p>
+        </div>
+
+        <div class="language-grid">
+          <article class="language-card">
+            <div class="top"><div class="flag">🇺🇸</div><h3>English</h3><div class="native">Base Edition</div><p class="desc">The original edition for women seeking a practical, emotionally intelligent framework for choosing the right partner.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-ENGLISH-LINK">Buy English</a><a class="small-btn secondary" href="downloads/checklist-en.pdf" download>Free checklist</a></div></div>
+          </article>
+
+          <article class="language-card" dir="rtl" lang="fa">
+            <div class="top"><div class="flag">🇮🇷</div><h3>فارسی</h3><div class="native">نسخه فارسی</div><p class="desc">راهنمایی روشن، محترمانه و کاربردی برای ارزیابی بلوغ عاطفی، امنیت، تعهد و ارزش‌های مشترک پیش از صمیمیت.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-PERSIAN-LINK">خرید فارسی</a><a class="small-btn secondary" href="downloads/checklist-fa.pdf" download>دانلود رایگان</a></div></div>
+          </article>
+
+          <article class="language-card" dir="rtl" lang="ar">
+            <div class="top"><div class="flag">🇸🇦</div><h3>العربية</h3><div class="native">النسخة العربية</div><p class="desc">دليل عملي للمرأة التي تريد تقييم النضج العاطفي، الاحترام، الحدود، والقيم قبل بناء علاقة قريبة.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-ARABIC-LINK">شراء العربية</a><a class="small-btn secondary" href="downloads/checklist-ar.pdf" download>تحميل مجاني</a></div></div>
+          </article>
+
+          <article class="language-card" lang="tr">
+            <div class="top"><div class="flag">🇹🇷</div><h3>Türkçe</h3><div class="native">Türkçe Baskı</div><p class="desc">Yakınlaşmadan önce karakter, tutarlılık, sınırlar ve ortak gelecek uyumunu değerlendirmek için modern bir rehber.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-TURKISH-LINK">Türkçe satın al</a><a class="small-btn secondary" href="downloads/checklist-tr.pdf" download>Ücretsiz kontrol listesi</a></div></div>
+          </article>
+
+          <article class="language-card" lang="es">
+            <div class="top"><div class="flag">🇪🇸</div><h3>Español</h3><div class="native">Edición en español</div><p class="desc">Una guía clara para evaluar madurez emocional, respeto, coherencia, seguridad y visión de futuro antes de intimar.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-SPANISH-LINK">Comprar español</a><a class="small-btn secondary" href="downloads/checklist-es.pdf" download>Checklist gratis</a></div></div>
+          </article>
+
+          <article class="language-card" lang="ja">
+            <div class="top"><div class="flag">🇯🇵</div><h3>日本語</h3><div class="native">日本語版</div><p class="desc">親密な関係に進む前に、誠実さ、感情的成熟、境界線、将来性を見極めるための実用的なガイド。</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-JAPANESE-LINK">日本語版を購入</a><a class="small-btn secondary" href="downloads/checklist-ja.pdf" download>無料チェックリスト</a></div></div>
+          </article>
+
+          <article class="language-card" lang="ru">
+            <div class="top"><div class="flag">🇷🇺</div><h3>Русский</h3><div class="native">Русское издание</div><p class="desc">Практичное руководство для оценки зрелости, уважения, надежности и совместимого будущего до эмоциональной близости.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-RUSSIAN-LINK">Купить</a><a class="small-btn secondary" href="downloads/checklist-ru.pdf" download>Скачать чеклист</a></div></div>
+          </article>
+
+          <article class="language-card" lang="zh">
+            <div class="top"><div class="flag">🇨🇳</div><h3>中文</h3><div class="native">中文版</div><p class="desc">在建立亲密关系前，用清晰的标准评估情感成熟度、尊重、边界、责任感与共同未来。</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-CHINESE-LINK">购买中文版</a><a class="small-btn secondary" href="downloads/checklist-zh.pdf" download>免费下载清单</a></div></div>
+          </article>
+
+          <article class="language-card" lang="fr">
+            <div class="top"><div class="flag">🇫🇷</div><h3>Français</h3><div class="native">Édition française</div><p class="desc">Un guide moderne pour évaluer le respect, la sécurité émotionnelle, les valeurs et la cohérence avant l’intimité.</p></div>
+            <div class="bottom"><div class="card-actions"><a class="small-btn" href="https://gumroad.com/YOUR-FRENCH-LINK">Acheter</a><a class="small-btn secondary" href="downloads/checklist-fr.pdf" download>Checklist gratuite</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="free-checklists">
+      <div class="container">
+        <div class="download-panel">
+          <div>
+            <h2>Free checklist library</h2>
+            <p>Offer a free workbook/checklist in each language. Place the PDFs inside a folder named <strong>downloads</strong>, then update the filenames here.</p>
+          </div>
+          <div class="download-list">
+            <div class="download-row"><div><strong>English checklist</strong><br><span>PDF workbook</span></div><a href="downloads/checklist-en.pdf" download>Download</a></div>
+            <div class="download-row"><div><strong>Persian checklist</strong><br><span>PDF workbook</span></div><a href="downloads/checklist-fa.pdf" download>Download</a></div>
+            <div class="download-row"><div><strong>Arabic checklist</strong><br><span>PDF workbook</span></div><a href="downloads/checklist-ar.pdf" download>Download</a></div>
+            <div class="download-row"><div><strong>Spanish checklist</strong><br><span>PDF workbook</span></div><a href="downloads/checklist-es.pdf" download>Download</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="visuals">
+      <div class="container">
+        <div class="section-head">
+          <h2>Visual gallery</h2>
+          <p>Add beautiful multilingual posters, book covers, and social graphics. Replace these creative blocks with real images later.</p>
+        </div>
+        <div class="showcase">
+          <article class="poster">
+            <div>
+              <p class="script">English campaign visual</p>
+              <h3>Choose with dignity, not fear.</h3>
+            </div>
+            <p>A premium editorial-style image for conferences, Instagram, landing pages, and launch announcements.</p>
+          </article>
+          <article class="poster light" dir="rtl" lang="fa">
+            <div>
+              <p class="script">پوستر فارسی</p>
+              <h3>انتخاب آگاهانه، آرامش آینده است.</h3>
+            </div>
+            <p>برای معرفی نسخه فارسی و کتابچه چک‌لیست رایگان در شبکه‌های اجتماعی و صفحه معرفی.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="setup">
+      <div class="container">
+        <div class="section-head">
+          <h2>GitHub Pages setup</h2>
+          <p>Recommended repository name: <strong>right-man-selection-guide</strong>. For a personal GitHub Pages site, you can also use <strong>YOURUSERNAME.github.io</strong>.</p>
+        </div>
+        <div class="setup">
+          <div class="step"><div class="step-number">01</div><h3>Create repo</h3><p>Create a public repository named <strong>right-man-selection-guide</strong>.</p></div>
+          <div class="step"><div class="step-number">02</div><h3>Add files</h3><p>Upload this file as <strong>index.html</strong>. Add PDFs in a <strong>downloads</strong> folder.</p></div>
+          <div class="step"><div class="step-number">03</div><h3>Replace links</h3><p>Change each placeholder Gumroad or Google Books URL to the correct language-specific purchase link.</p></div>
+          <div class="step"><div class="step-number">04</div><h3>Publish</h3><p>Go to Settings → Pages → Deploy from branch → main/root, then save.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>The Right Man Selection Guide</strong><br>Global multilingual editions and free checklist library.</div>
+      <div>© <span id="year"></span> Faramarz Kowsari. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
